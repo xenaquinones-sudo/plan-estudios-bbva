@@ -1,0 +1,245 @@
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 30px;
+
+  overflow-y: auto;     /* scroll vertical del navegador */
+  overflow-x: auto;     /* 🔑 scroll horizontal DEL NAVEGADOR */
+}
+
+/* ===== HEADER ===== */
+.title, .page-header h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.subtitle, .page-header .subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ===== ROADMAP ===== */
+.roadmap {
+  display: flex;
+  gap: 20px;
+
+  flex-wrap: nowrap;      /* 🔑 módulos en línea */
+  align-items: flex-start;
+
+  /* ❌ quitamos scroll y altura fija */
+  overflow: visible;
+}
+
+/* ===== MÓDULOS ===== */
+.module {
+  flex: 0 0 650px;        /* 🔑 ancho fijo */
+  max-width: 650px;
+
+  background: #0f2a44;
+  border-radius: 14px;
+  padding: 0;
+}
+
+.module-inner {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.module-blue,
+.module-lessons {
+  flex: 0 0 auto;
+}
+
+/* ===== TEXTOS ===== */
+.module h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.module span, .module-subtitle {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 5px 0 20px;
+}
+
+.module-slogan {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: #d6e4ff;
+}
+
+/* ===== OBJETIVO ===== */
+.module-objective {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 4px solid #ffffff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 14px 0 24px;
+}
+
+/* ===== LECCIONES ===== */
+.lesson {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lesson-btn {
+  background: #0d5bd9;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ===== CONTENIDO INTERNO ===== */
+.lesson-content {
+  max-height: 280px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+/* ===== MODAL FIX DEFINITIVO ===== */
+
+.modal-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.modal-box {
+  background: #ffffff;
+  width: 95vw;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  //border-bottom: 1px solid #e5e5e5;
+}
+
+
+.modal-content {
+  flex: 1 1 auto;
+  padding: 16px 24px;
+  scrollbar-gutter: stable; /* 🔑 reserva espacio del scroll */
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ===== FICHA DE APRENDIZAJE ===== */
+
+.ficha-wrapper {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.ficha-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.ficha-table th,
+.ficha-table td {
+  border: 1px solid #1f3a56;
+  padding: 8px 10px;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.ficha-header th {
+  background: #0f2a44;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ficha-subheader td {
+  background: #e9f1fb;
+  text-align: center;
+}
+
+.ficha-logro-title {
+  background: #f2f5f9;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ficha-logro-text {
+  text-align: center;
+  padding: 12px;
+}
+
+.ficha-momento th {
+  background: #dce6f2;
+  text-align: center;
+}
+
+.ficha-center {
+  text-align: center;
+}
+
+.ficha-col-momento {
+  width: 140px;        /* ancho fijo */
+  font-weight: 600;
+  background: #f7f9fc;
+}
+
+.modal-title-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.modal-title-wrapper h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f2a44;
+}
+
+
+</style>
