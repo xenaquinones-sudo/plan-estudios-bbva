@@ -1,0 +1,2700 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Plan de Estudios – BBVA</title>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 30px;
+      overflow-y: auto; /* scroll vertical del navegador */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .roadmap {
+      display: flex;
+      gap: 20px;
+      //overflow-x: auto;
+      padding-bottom: 20px;
+      align-items: flex-start;
+    }
+
+
+    .modules-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .module {
+      flex-shrink: 0;            /* evita que se achique con texto largo */
+      min-width: 600px;           /* ancho mínimo cómodo */
+      max-width: 650px;           /* límite máximo */
+      background: #0f2a44;
+      color: white;
+      border-radius: 14px;
+      padding: 22px;
+      box-sizing: border-box;
+      overflow: hidden;           /* no se expande con contenido */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .module h2 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .module span {
+      display: block;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .lesson {
+      background: white;
+      color: #333;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .lesson h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+
+    .lesson p {
+      margin: 0 0 12px 0;
+      color: #666;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .lesson button, .lesson-btn {
+      background: #0057b8;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .lesson button:hover, .lesson-btn:hover {
+      background: #003f87;
+    }
+
+    .time {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    .info-box {
+      background: #f4f6f9;
+      border-left: 4px solid #0057b8;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .info-box h4 {
+      margin: 0 0 6px 0;
+      font-size: 14px;
+      color: #0057b8;
+    }
+
+    .info-box p, .info-box li {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .lesson-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+
+    .lesson-content.open {
+      max-height: 1000px; /* suficiente para cualquier contenido, sin afectar ancho */
+      opacity: 1;
+    }
+
+     /* ===== MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+
+    .modal-box {
+      background: #ffffff;
+
+      width: 90vw;          /* 🔑 ocupa gran parte de la pantalla */
+      max-width: 1200px;    /* 🔑 ancho ideal para tablas */
+      max-height: 90vh;     /* 🔑 nunca se sale de la pantalla */
+
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 10px;
+      justify-content: center;   /* 👈 CENTRA EL TÍTULO */
+  position: relative;   
+//      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .modal-content {
+      flex: 1 1 auto;
+      padding: 16px 24px;
+
+      overflow-y: auto;     /* 🔑 scroll interno */
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      position: absolute;
+      right: 16px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="page-header">
+  <h1>Plan de Estudios – Konecta más con BBVA</h1>
+  <div class="subtitle">Ruta formativa por módulos y lecciones</div>
+</div>
+
+<div class="roadmap">
+
+    <!-- MÓDULO 1 -->
+    <div class="module">
+      <div class="module-inner">
+      <h2>Módulo 1: Canales Digitales – Token Digital</h2>
+      <p style="text-align:center; font-size:14px; margin:4px 0 8px 0; color:#d6e4ff;">
+        <em>Domina el Protocolo de Activación y Soporte de Token Digital</em>
+      </p>
+
+      <div style="
+        background: rgba(255,255,255,0.12);
+        border-left: 4px solid #ffffff;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 14px 0 24px 0;
+        font-size: 14px;">
+        <p style="margin:0; line-height:1.4;">
+          📌 <strong>Objetivo del Módulo:</strong>
+          Aplicar correctamente el protocolo de activación y soporte del Token Digital en el App BBVA.
+        </p>
+      </div>
+
+      <!-- LECCIÓN 1 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 1: Problemas de ingreso</h3>
+            <p class="time">⏱ Duración: 40 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('l1')">Ver más detalles</button>
+        </div>
+
+        <div id="l1" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>Resolver errores de acceso y validación de DNI en Token Digital según el sistema operativo del dispositivo.</p>
+          </div>
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>Brindar soporte técnico resolutivo para habilitar la herramienta de seguridad en entornos Android, iPhone y Huawei.</p>
+          </div>
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Diagnóstico de mensajes de error al ingresar al App.</li>
+              <li>Protocolo de validación de identidad (DNI) por fabricante.</li>
+              <li>Configuración de seguridad y actualización de la aplicación.</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🗂️ GUIDE – Canales Digitales – Token Digital | Guía paso a paso de la gestión.</li>
+              <li>🧩 LABS – Problemas con mensaje al ingresar | Evaluación lúdica sobre el tema.</li>
+              <li>🧩 LABS – Problemas de ingreso con DNI – Android | Evaluación lúdica sobre el tema.</li>
+              <li>🧩 LABS – Problemas de ingreso con DNI – iPhone | Evaluación lúdica sobre el tema.</li>
+              <li>🧩 LABS – Problemas de ingreso con DNI – Huawei | Evaluación lúdica sobre el tema.</li>
+            </ul>
+          </div>
+           <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM1L1)"
+                data-title="Ficha de Aprendizaje · M1L1 · Problemas de ingreso"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- LECCIÓN 2 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 2: Cliente en el extranjero</h3>
+            <p class="time">⏱ Duración: 25 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('l2')">Ver más detalles</button>
+        </div>
+
+        <div id="l2" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>Ejecutar el protocolo de activación para clientes en el extranjero según su tipo de DNI (Peruano / Extranjero) y telefonía.</p>
+          </div>
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>Gestionar activaciones internacionales aplicando las validaciones de seguridad y normativa vigentes para garantizar una atención segura.</p>
+          </div>
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Protocolo de atención.</li>
+              <li>Validación de tarjeta de contacto.</li>
+              <li>Validación de identidad.</li>
+              <li>Activación NFC.</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🧩 LABS – Token Digital Cliente en el Extranjero no tiene DNI peruano. | Evaluación lúdica sobre el tema.</li>
+              <li>🧩 LABS – Token Digital Cliente en el Extranjero DNI peruano con número internacional. | Evaluación lúdica sobre el tema.</li>
+              <li>🧩 LABS – Token Digital Cliente en el Extranjero DNI peruano y número peruano. | Evaluación lúdica sobre el tema.</li>
+            </ul>
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM1L2)"
+                data-title="Ficha de Aprendizaje · M1L2 · Cliente en el extranjero"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+        </div>
+      </div>
+
+      <!-- LECCIÓN 3 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 3: Problemas con Clave SMS</h3>
+            <p class="time">⏱ Duración: 15 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('l3')">Ver más detalles</button>
+        </div>
+
+        <div id="l3" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>Resolver los incidentes que impiden la recepción o validación de la Clave SMS, asegurando que el cliente recupere su capacidad transaccional de manera inmediata.</p>
+          </div>
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>Ejecutar protocolos de descarte técnico con precisión, diferenciando entre problemas de red, configuración del dispositivo o errores de registro.</p>
+          </div>
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Protocolo de atención.</li>
+              <li>Descartes.</li>
+              <li>Guías de actualización.</li>
+            </ul>
+          </div>
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🧩 LABS – Problemas con Clave SMS. | Evaluación lúdica sobre el tema.</li>
+            </ul>
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM1L3)"
+                data-title="Ficha de Aprendizaje · M1L3 · Problemas con Clave SMS"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+        </div>
+      </div>
+  
+
+    </div> <!-- fin módulo 1 -->
+
+    <!-- MÓDULO 2 -->
+    <div class="module">
+      <div class="module-inner">
+      <h2>Módulo 2: Canales Digitales – Plin</h2>
+
+      <p style="text-align:center; font-size:14px; margin:4px 0 8px 0; color:#d6e4ff;">
+        <em>Domina el Protocolo de Afiliación, Uso y Resolución de Incidencias en Plin</em>
+      </p>
+
+      <div style="
+        background: rgba(255,255,255,0.12);
+        border-left: 4px solid #ffffff;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 14px 0 24px 0;
+        font-size: 14px;
+      ">
+        <p style="margin:0; line-height:1.4;">
+          📌 <strong>Objetivo del Módulo:</strong>
+          Garantizar la resolución eficiente de consultas y transacciones en Plin, optimizando los tiempos de respuesta.
+        </p>
+      </div>
+
+      <!-- LECCIÓN 1 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 1: Afiliación y configuración de Plin</h3>
+            <p class="time">⏱ Duración: 30 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('m2l1')">Ver más detalles</button>
+        </div>
+
+        <div id="m2l1" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>
+              Brindar información precisa sobre plazos de abono y resolver fallas al iniciar una transferencia.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>
+              Diagnosticar fallas en la vinculación de cuentas y ajustes del aplicativo para garantizar que el cliente pueda operar sin fricciones.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Tipos de TI: plazos de liquidación y horarios de corte.</li>
+              <li>Fallas de intento: errores de red, App desactualizada y límites superados.</li>
+              <li>Guía de sondeo: preguntas clave para identificar la necesidad del cliente.</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🗂️ GUIDE – Canales Digitales – Plin | Guía paso a paso de la gestión.</li>
+              <li>🧩 LABS – Problemas con afiliación | Evaluación lúdica.</li>
+              <li>🧩 LABS – Problemas con la configuración de Plin | Evaluación lúdica.</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM2L1)"
+                data-title="Ficha de Aprendizaje · M2L1 · Afiliación y Configuración"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+        </div>
+      </div>
+
+      <!-- LECCIÓN 2 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 2: Problemas en la transferencia</h3>
+            <p class="time">⏱ Duración: 20 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('m2l2')">Ver más detalles</button>
+        </div>
+
+        <div id="m2l2" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>
+              Resolver impedimentos técnicos y operativos previos al envío de dinero para asegurar el flujo de la transacción.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>
+              Identificar si la falla de transferencia depende del App o de los límites y estados de cuenta del emisor o receptor.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Fallas en el ícono de contactos y actualización de App.</li>
+              <li>Gestión de límites diarios, saldos y cuentas bloqueadas.</li>
+              <li>Speeches de responsabilidad según el rol (emisor / receptor).</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🧩 LABS – Problemas antes de la transferencia | Evaluación lúdica.</li>
+              <li>🧩 LABS – Responsabilidad Emisor–Receptor | Evaluación lúdica.</li>
+            </ul>
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM2L2)"
+                data-title="Ficha de Aprendizaje · M2L2 · Problemas en la transferencia"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+        </div>
+      </div>
+
+      <!-- LECCIÓN 3 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 3: Validación y seguimiento</h3>
+            <p class="time">⏱ Duración: 20 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('m2l3')">Ver más detalles</button>
+        </div>
+
+        <div id="m2l3" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>
+              Confirmar el estado real de las transacciones usando herramientas de consulta interna.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>
+              Interpretar estados AFT / OCT en Niubiz y reversos en MC30 para informar el destino de los fondos.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Uso de Niubiz: identificación de estados exitosos o denegados.</li>
+              <li>Uso de MC30: verificación de reversos (F5) y plazos de devolución.</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🧩 LABS – Validación de operación | Evaluación lúdica.</li>
+              <li>🧩 LABS – Validación por MC30 | Evaluación lúdica.</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM2L3)"
+                data-title="Ficha de Aprendizaje · M2L3 · Validación y Seguimiento"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+
+        </div>
+      </div>
+
+      <!-- LECCIÓN 4 -->
+      <div class="lesson">
+        <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="lesson-info">
+            <h3>Lección 4: Gestión de retenciones y abonos</h3>
+            <p class="time">⏱ Duración: 20 minutos</p>
+          </div>
+          <button class="lesson-btn" onclick="toggleLesson('m2l4')">Ver más detalles</button>
+        </div>
+
+        <div id="m2l4" class="lesson-content">
+          <div class="info-box">
+            <h4>🎯 Objetivo</h4>
+            <p>
+              Gestionar fondos retenidos y abonos fallidos aplicando protocolos de resolución inmediata.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>🏆 Competencia</h4>
+            <p>
+              Evaluar condiciones de cuenta y abono para aplicar FCR Plin o derivar a reclamos.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>📚 Contenido</h4>
+            <ul>
+              <li>Análisis de retenciones manuales y por falta de fondos.</li>
+              <li>Criterios para aplicar FCR en errores de abono.</li>
+              <li>Protocolo de escalamiento y cierre por disconformidad.</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h4>📦 Producto</h4>
+            <ul>
+              <li>🧩 LABS – Error de abono | Evaluación lúdica.</li>
+              <li>🧩 LABS – Plin retenido | Evaluación lúdica.</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM2L4)"
+                data-title="Ficha de Aprendizaje · M2L4 · Gestión de retenciones y abonos"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+
+        </div>
+      </div>
+      </div>
+    </div> <!-- fin módulo 2 -->
+
+    <!-- MÓDULO 3 -->
+      <div class="module">
+        <div class="module-inner">
+           <h2>Módulo 3: Canales Digitales – Transferencias Interbancarias</h2>
+          <p style="text-align:center; font-size:14px; margin:4px 0 8px 0; color:#d6e4ff;">
+            <em>Domina el Protocolo de Transferencias Interbancarias y Gestión de Reclamos</em>
+          </p>
+
+          <div style="
+            background: rgba(255,255,255,0.12);
+            border-left: 4px solid #ffffff;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 14px 0 24px 0;
+            font-size: 14px;
+          ">
+            <p style="margin:0; line-height:1.4;">
+              📌 <strong>Objetivo del Módulo:</strong>
+              Gestionar las transferencias entre diferentes entidades bancarias,
+              garantizando el cumplimiento de los plazos y la resolución efectiva de
+              retenciones o errores.
+            </p>
+          </div>
+
+          <!-- LECCIÓN 1 -->
+          <div class="lesson">
+            <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="lesson-info">
+                <h3>Lección 1: Transferencias interbancarias</h3>
+                <p class="time">⏱ Duración: 30 minutos</p>
+              </div>
+              <button class="lesson-btn" onclick="toggleLesson('m3l1')">Ver más detalles</button>
+            </div>
+
+            <div id="m3l1" class="lesson-content">
+              <div class="info-box">
+                <h4>🎯 Objetivo</h4>
+                <p>
+                  Resolver consultas y problemas sobre transferencias interbancarias
+                  de manera ágil para asegurar el flujo de fondos del cliente.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h4>🏆 Competencia</h4>
+                <p>
+                  Analizar los tipos de transferencia, plazos y motivos de rechazo
+                  para garantizar una gestión resolutiva y transparente.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h4>📚 Contenido</h4>
+                <ul>
+                  <li>Tipos de transferencias interbancarias (inmediatas y diferidas) y plazos de abono.</li>
+                  <li>Identificación y solución a problemas con intentos de transferencia.</li>
+                  <li>Análisis de motivos de rechazo y protocolos de devolución de fondos.</li>
+                  <li>Gestión de información y seguimiento de operaciones no aplicadas.</li>
+                </ul>
+              </div>
+
+              <div class="info-box">
+                <h4>📦 Producto</h4>
+                <ul>
+                  <li>🗂️ GUIDE – Transferencias interbancarias | Guía paso a paso.</li>
+                  <li>🧩 LABS – Información de una transferencia | Evaluación lúdica.</li>
+                  <li>🧩 LABS – Problemas con transferencias | Evaluación lúdica.</li>
+                </ul>
+              </div>
+
+              <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM3L1)"
+                data-title="Ficha de Aprendizaje · M3L1 · Gestión y Resolución"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+           </div>
+            </div>
+          </div>
+
+          <!-- LECCIÓN 2 -->
+          <div class="lesson">
+            <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="lesson-info">
+                <h3>Lección 2: Rechazos e incidencias de transferencia</h3>
+                <p class="time">⏱ Duración: 20 minutos</p>
+              </div>
+              <button class="lesson-btn" onclick="toggleLesson('m3l2')">Ver más detalles</button>
+            </div>
+
+            <div id="m3l2" class="lesson-content">
+              <div class="info-box">
+                <h4>🎯 Objetivo</h4>
+                <p>
+                  Gestionar transferencias rechazadas o no aplicadas para informar
+                  al cliente sobre el retorno de sus fondos.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h4>🏆 Competencia</h4>
+                <p>
+                  Interpretar motivos de rechazo y plazos de devolución para gestionar
+                  quejas de manera efectiva según la normativa.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h4>📚 Contenido</h4>
+                <ul>
+                  <li>Motivos de rechazo: datos erróneos, cuenta bloqueada o moneda distinta.</li>
+                  <li>Seguimiento de fondos y validación de reversos.</li>
+                  <li>Comunicación de plazos (48h – 72h) y derivación a reclamos.</li>
+                </ul>
+              </div>
+
+              <div class="info-box">
+                <h4>📦 Producto</h4>
+                <ul>
+                  <li>🧩 LABS – Rechazo de transferencia | Evaluación lúdica.</li>
+                  <li>🧩 LABS – Problemas con intento de transferencia | Evaluación lúdica.</li>
+                </ul>
+              </div>
+
+              <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM3L2)"
+                data-title="Ficha de Aprendizaje · M3L2 · Rechazos e Incidencias"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div> <!-- FIN DEL MÓDULO 3 -->
+
+      <!-- MÓDULO 4 -->
+      <div class="module">
+        <div class="module-inner">
+        <h2>Módulo 4: Navegación y uso</h2>
+
+        <p style="text-align:center; font-size:14px; margin:4px 0 8px 0; color:#d6e4ff;">
+          <em>Optimiza la experiencia del cliente en el App</em>
+        </p>
+
+        <div style="
+            background: rgba(255,255,255,0.12);
+            border-left: 4px solid #ffffff;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 14px 0 24px 0;
+            font-size: 14px;
+          ">
+            <p style="margin:0; line-height:1.4;">
+              📌 <strong>Objetivo del Módulo:</strong>
+            Resolver dudas de navegación y uso del App para fomentar la autogestión y el conocimiento de herramientas financieras.
+          </p>
+        </div>
+
+        <!-- LECCIÓN 1 -->
+        <div class="lesson">
+          <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="lesson-info">
+              <h3>Lección 1: Gestión y operaciones del App</h3>
+              <p class="time">⏱ Duración: 35 minutos</p>
+            </div>
+            <button class="lesson-btn" onclick="toggleLesson('m4l1')">Ver más detalles</button>
+          </div>
+
+          <div id="m4l1" class="lesson-content">
+            <div class="info-box">
+              <h4>🎯 Objetivo</h4>
+              <p>
+                Guiar al cliente en la gestión de sus datos y ejecución de operaciones principales dentro del App.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h4>🏆 Competencia</h4>
+              <p>
+                Explicar y guiar al cliente en el uso de la app, instruir sobre la ubicación de datos y rutas de operaciones frecuentes para asegurar una navegación fluida.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h4>📚 Contenido</h4>
+              <ul>
+                <li>Configuración de perfil: consulta y actualización de “Datos del APP”.</li>
+                <li>Operaciones del día a día: guía paso a paso para ejecutar “Operaciones frecuentes”.</li>
+                <li>Seguridad de dispositivos: uso del “Device Manager” y gestión de la “Guía de alertas dispositivos”.</li>
+                <li>Protocolo de servicio: aplicación de la “Pregunta adicional” y cierre de llamada con encuesta de satisfacción.</li>
+              </ul>
+            </div>
+
+            <div class="info-box">
+              <h4>📦 Producto</h4>
+              <ul>
+                <li>🗂️ GUIDE – Canales Digitales – Navegación y uso | Guía paso a paso de la gestión.</li>
+                <li>🧩 LABS – Datos del APP | Evaluación lúdica.</li>
+                <li>🧩 LABS – Operaciones frecuentes | Evaluación lúdica.</li>
+              </ul>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM4L1)"
+                data-title="Ficha de Aprendizaje · M4L1 · Gestión y Operaciones del APP"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+              </div>
+          </div>
+        </div>
+
+        <!-- LECCIÓN 2 -->
+        <div class="lesson">
+          <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="lesson-info">
+              <h3>Lección 2: Herramientas y beneficios</h3>
+              <p class="time">⏱ Duración: 20 minutos</p>
+            </div>
+            <button class="lesson-btn" onclick="toggleLesson('m4l2')">Ver más detalles</button>
+          </div>
+
+          <div id="m4l2" class="lesson-content">
+            <div class="info-box">
+              <h4>🎯 Objetivo</h4>
+              <p>
+                Promover el uso de herramientas de gestión personal y productos destacados del mes.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h4>🏆 Competencia</h4>
+              <p>
+                Asesorar sobre beneficios adicionales como salud financiera para dar valor agregado a la atención.
+              </p>
+            </div>
+
+            <div class="info-box">
+              <h4>📚 Contenido</h4>
+              <ul>
+                <li>Gestión de salud financiera: uso de “Mis metas”, “Mis presupuestos” y “Mi día a día”.</li>
+                <li>Inversión y ahorro: apertura de cuentas a plazo fijo, cuentas de ahorro y metas de ahorro.</li>
+                <li>Oportunidades digitales: ubicación y beneficios del “Producto del mes” y campañas vigentes.</li>
+                <li>Autogestión de productos: vinculación de tarjetas y reprogramación de deuda desde el App.</li>
+              </ul>
+            </div>
+
+            <div class="info-box">
+              <h4>📦 Producto</h4>
+              <ul>
+                <li>🧩 LABS – Salud financiera | Evaluación lúdica.</li>
+                <li>🧩 LABS – Productos del mes | Evaluación lúdica.</li>
+              </ul>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM4L2)"
+                data-title="Ficha de Aprendizaje · M4L2 · Herramientas y Beneficios"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+              </div>
+          </div>
+        </div>
+        </div>  
+      </div> <!-- FIN MÓDULO 4 -->
+
+      <!-- MÓDULO 5 -->
+      <div class="module">
+        <div class="module-inner">
+
+          <h2>Módulo 5: Afiliación e inscripción</h2>
+
+          <p style="text-align:center; font-size:14px; margin:4px 0 8px 0; color:#d6e4ff;">
+            <em>Garantiza el acceso y conectividad del cliente</em>
+          </p>
+
+          <div style="
+              background: rgba(255,255,255,0.12);
+              border-left: 4px solid #ffffff;
+              border-radius: 8px;
+              padding: 12px 16px;
+              margin: 14px 0 24px 0;
+              font-size: 14px;
+            ">
+            <p style="margin:0; line-height:1.4;">
+              📌 <strong>Objetivo del Módulo:</strong>
+              Resolver fallas de acceso, afiliación y red en el asistente para asegurar la continuidad del servicio.
+            </p>
+          </div>
+
+          <!-- LECCIÓN 1 -->
+          <div class="lesson">
+            <div class="lesson-header" style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="lesson-info">
+                <h3>Lección 1: Afiliación y soporte de acceso</h3>
+                <p class="time">⏱ Duración: 35 minutos</p>
+              </div>
+              <button class="lesson-btn" onclick="toggleLesson('m5l1')">Ver más detalles</button>
+            </div>
+
+            <div id="m5l1" class="lesson-content">
+
+              <div class="info-box">
+                <h4>🎯 Objetivo</h4>
+                <p>
+                  Resolver fallas de acceso y conectividad en el Asistente Inteligente (AI).
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h4>🏆 Competencia</h4>
+                <p>
+                  Diagnosticar bloqueos y errores de red mediante descartes técnicos por dispositivo.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h4>📚 Contenido</h4>
+                <ul>
+                  <li>Afiliación: validación de cuenta, tarjeta y desbloqueo de claves.</li>
+                  <li>Conectividad: verificación de red y actualización de App / sistema operativo.</li>
+                  <li>Errores críticos: pantallas de carga, QR inválido y limpieza de caché.</li>
+                  <li>Resolución: solución directa o escalamiento a Soporte Digital.</li>
+                </ul>
+              </div>
+
+              <div class="info-box">
+                <h4>📦 Producto</h4>
+                <ul>
+                  <li>🗂️ GUIDE – Canales Digitales – Afiliación e inscripción | Guía paso a paso de la gestión.</li>
+                  <li>🧩 LABS – Problemas de afiliación o acceso | Evaluación lúdica.</li>
+                  <li>🧩 LABS – Problemas con acceso | Evaluación lúdica.</li>
+                  <li>🧩 LABS – Problemas con la conectividad | Evaluación lúdica.</li>
+                </ul>
+              </div>
+
+              <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button
+                type="button"
+                onclick="openModal(this.dataset.title, fichaM5L1)"
+                data-title="Ficha de Aprendizaje · M5L1 · Afiliación y Soporte de acceso"
+                style="background:#0b5ed7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"
+              >
+                Ver ficha de aprendizaje
+              </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+</div> 
+ 
+<script>
+  
+  function toggleLesson(id) {
+    const section = document.getElementById(id);
+    const button = event.target;
+
+    if (section.classList.contains("open")) {
+      section.classList.remove("open");
+      button.innerText = "Ver más detalles";
+    } else {
+      section.classList.add("open");
+      button.innerText = "Ocultar detalles";
+    }
+  }
+
+  
+  window.onload = function () {
+    document.querySelectorAll('.lesson-content').forEach(section => {
+      section.classList.remove('open');
+    });
+
+    document.querySelectorAll('.lesson-btn').forEach(btn => {
+      btn.innerText = "Ver más detalles";
+    });
+  };
+
+
+   function openModal(title, content) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalContent').innerHTML = content;
+    document.getElementById('learningModal').style.display = 'flex';
+    }
+
+  function closeModal() {
+    document.getElementById('learningModal').style.display = 'none';
+  }
+
+const fichaM1L1 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+  <colgroup>
+    <col style="width:9%;">   
+    <col style="width:13%;">  
+    <col style="width:16%;">  
+    <col style="width:22%;">  
+    <col style="width:26%;">  
+    <col style="width:14%;">  
+  </colgroup>
+
+  <!-- CABECERA -->
+  <tr style="background:#0f2a44; color:#fff; text-align:center;">
+    <th style="border:1px solid #1f3a56;">Cuenta</th>
+    <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+    <th style="border:1px solid #1f3a56;">Módulo 1</th>
+    <th style="border:1px solid #1f3a56;">Lección 1</th>
+    <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+    <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+  </tr>
+
+  <tr style="background:#4f81bd; color:#fff; text-align:center;">
+    <td style="border:1px solid #1f3a56;">BBVA</td>
+    <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+    <td style="border:1px solid #1f3a56;">Token Digital</td>
+    <td style="border:1px solid #1f3a56;">Problemas de Ingreso</td>
+    <td style="border:1px solid #1f3a56;">1</td>
+    <td style="border:1px solid #1f3a56;">45 min</td>
+  </tr>
+
+  <!-- LOGRO -->
+  <tr style="background:#e4ebf5; text-align:center;">
+    <td colspan="6" style="border:1px solid #1f3a56; text-align:center;">
+      <b>🏆 Competencia</b><br>
+      <small><i>Logro de aprendizaje de la lección</i></small>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+      Brindar soporte técnico resolutivo para habilitar la herramienta de seguridad
+      en entornos Android, iPhone y Huawei.
+    </td>
+  </tr>
+
+  <!-- MOMENTOS -->
+  <tr style="background:#dbe5f1; text-align:center;">
+    <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+    <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+    <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+    <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+    <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+    <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+  </tr>
+
+  <tr style="background:#eef3fa; text-align:center; font-size:12px;">
+    <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+    <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+    <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+  </tr>
+
+  <!-- ACTIVIDAD -->
+  <tr>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">💬 Actividad</td>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">¿Cuál es el objetivo?</td>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">¿Qué aprenderemos en esta lección?</td>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">¡Esto es lo que hacemos!</td>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">Evaluación</td>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">Refuerza lo aprendido</td>
+  </tr>
+
+  <!-- ACCIONES -->
+  <tr>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">⚙️ Acciones </td>
+    <td style="border:1px solid #1f3a56; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">
+      Identificar y resolver errores de acceso y validación de DNI en Token Digital.
+    </td>
+    <td style="border:1px solid #1f3a56; padding:14px 14px; line-height:1.45;">
+      Los participantes exploran la problemática:<br>
+      🔹¿Por qué falla el DNI?<br>
+      🔹¿Qué errores son comunes por SO?<br>
+      🔹¿Cómo influye la actualización de la App?
+    </td>
+    <td style="border:1px solid #1f3a56; padding:14px 14px; line-height:1.45;">
+      Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+      🔹Función del sistema Front en el proceso de venta.<br>
+      🔹Etapas del flujo de venta: inicio, validación, registro y cierre.<br>
+      🔹Validación de datos y políticas aplicables.<br>
+      🔹Buenas prácticas y errores frecuentes.
+    </td>
+    <td style="border:1px solid #1f3a56; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">
+      Los participantes ingresarán a DidactiK! para resolver la OVA evaluativa.
+    </td>
+    <td style="border:1px solid #1f3a56; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">
+      Feedback final sobre los errores más críticos encontrados en los LABS de cada sistema operativo.
+    </td>
+  </tr>
+
+  <!-- RECURSO + OVAs -->
+  <tr>
+    <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">📚<br>Recurso</td>
+    <td rowspan="2" style="border:1px solid #1f3a56; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">🗣️<br>Introducción del formador</td>
+    
+    <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+      OVAs
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="border:1px solid #1f3a56; text-align:center; vertical-align:middle;">
+      🗂️ GUIDE<br>
+      Canales Digitales – Token Digital
+    </td>
+    <td style="border:1px solid #1f3a56; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">
+      🧩 LABS <br>
+      Problemas con mensaje al Ingresar<br>
+      Problemas de ingreso DNI – Android<br>
+      Problemas de ingreso DNI – iPhone<br>
+      Problemas de ingreso DNI – Huawei
+    </td>
+    <td style="border:1px solid #1f3a56; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">
+      📄<br> Resumen del formador
+    </td>
+  </tr>
+
+  <!-- TIEMPO -->
+  <tr>
+    <td style="border:1px solid #1f3a56; font-weight:600; text-align:center; vertical-align:middle; padding:14px 14px; line-height:1.45;">⏳<br> Tiempo estimado</td>
+    <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+    <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+    <td style="border:1px solid #1f3a56; text-align:center;">20 min</td>
+    <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  </tr>
+
+</table>
+</div>
+`;
+
+const fichaM1L2 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 1</th>
+  <th style="border:1px solid #1f3a56;">Lección 2</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Token Digital</td>
+  <td style="border:1px solid #1f3a56;">Cliente en el Extranjero</td>
+  <td style="border:1px solid #1f3a56;">1</td>
+  <td style="border:1px solid #1f3a56;">25 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Gestionar activaciones internacionales aplicando las validaciones de seguridad
+    y normativa vigentes para garantizar una atención segura.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Ejecutar el protocolo de activación según tipo de DNI y telefonía.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿Cómo varía el protocolo según el tipo de DNI (Peruano o Extranjero)?<br>
+    🔹¿Qué requisitos técnicos se necesitan para la activación NFC en el exterior?<br>
+    🔹¿Qué validaciones de seguridad son obligatorias para garantizar una atención segura?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Revisión de contenidos clave:<br>
+    🔹Protocolo de atención.<br>
+    🔹Validación de tarjeta de contacto.<br>
+    🔹Activación NFC.
+  </td>
+  <td style="border:1px solid #1f3a56;  padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK! para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    🔹Los participantes ingresan a DidactiK! para repasar la OVA y fortalecer su conocimiento.<br><br>
+    🔹Resolución de dudas sobre la diferencia entre validación con DNI Peruano
+    vs. Extranjero y uso de Nro. Internacional.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    🧩 LABS<br>
+    Token Digital Cliente en el Extranjero – No tiene DNI Peruano<br>
+    Token Digital Cliente en el Extranjero – DNI Peruano con Nro. Internacional<br>
+    Token Digital Cliente en el Extranjero – DNI Peruano y Nro. Peruano
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br> Resumen del <br>formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">15 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM1L3 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 1</th>
+  <th style="border:1px solid #1f3a56;">Lección 3</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Token Digital</td>
+  <td style="border:1px solid #1f3a56;">Problemas con Clave SMS</td>
+  <td style="border:1px solid #1f3a56;">1</td>
+  <td style="border:1px solid #1f3a56;">15 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Ejecutar protocolos de descarte técnico con precisión, diferenciando entre
+    problemas de red, configuración del dispositivo o errores de registro.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    Resolver incidentes que impiden la recepción o validación de la Clave SMS.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿Cómo diferenciar si la falta de SMS es un problema de red o de registro?<br>
+    🔹¿Cuáles son los pasos clave del protocolo de descarte técnico?<br>
+    🔹¿Qué guías de actualización aseguran que el cliente recupere su capacidad transaccional?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Revisión de contenidos:<br>
+    🔹Protocolo de atención.<br>
+    🔹Pasos de descarte técnico.<br>
+    🔹Guías de actualización.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    Los participantes ingresarán a DidactiK! para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    🔹Los participantes ingresarán a DidactiK! para repasar la OVA y fortalecer su conocimiento.<br><br>
+    🔹Resolución de dudas sobre la diferencia entre validación con DNI Peruano
+    vs. Extranjero y uso de Nro. Internacional.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Problemas con Clave SMS
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del <br>formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM2L1 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 2</th>
+  <th style="border:1px solid #1f3a56;">Lección 1</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">PLIN</td>
+  <td style="border:1px solid #1f3a56;">Afiliación y Configuración</td>
+  <td style="border:1px solid #1f3a56;">2</td>
+  <td style="border:1px solid #1f3a56;">30 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Diagnosticar fallas en la vinculación de cuentas y ajustes del aplicativo
+    para garantizar que el cliente pueda operar sin fricciones.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Brindar información sobre abonos y resolver fallas al iniciar transferencias.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿Cuáles son los plazos de liquidación y horarios de corte para abonos?<br>
+    🔹¿Qué preguntas clave del “Sondeo” ayudan a identificar la necesidad del cliente?<br>
+    🔹¿Cómo identificar si una falla de intento es por límites superados o por red?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes exploran la GUIDE sobre:<br>
+    🔹Fallas de intento (red, App desactualizada).<br>
+    🔹Guía de sondeo y preguntas clave.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK! para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    🔹Los participantes ingresarán a DidactiK! para repasar la OVA y fortalecer su conocimiento.<br><br>
+    🔹Feedback sobre la identificación de límites superados y resolución de errores.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">
+    📘 GUIDE<br>
+    Flujo de atención Traslado de Domicilio
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Problemas con Afiliación<br>
+    Problemas con la configuración de PLIN
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del <br>Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM2L2 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 2</th>
+  <th style="border:1px solid #1f3a56;">Lección 2</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">PLIN</td>
+  <td style="border:1px solid #1f3a56;">Problemas en la transferencia</td>
+  <td style="border:1px solid #1f3a56;">2</td>
+  <td style="border:1px solid #1f3a56;">20 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Identificar si la falla de transferencia depende de la App o de los límites
+    y estados de cuenta del emisor o receptor.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Resolver impedimentos técnicos y operativos previos al envío de dinero.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿Qué hacer si el ícono de contactos no aparece o no carga?<br>
+    🔹¿Cómo verificar si el problema es por una cuenta bloqueada o saldo insuficiente?<br>
+    🔹¿Qué speech de responsabilidad se debe usar según el rol del cliente (emisor/receptor)?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Gestión de límites diarios y saldos.<br>
+    🔹Cuentas bloqueadas.<br>
+    🔹Speeches de responsabilidad.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Los participantes resuelven los LABS de diagnóstico sobre fallas previas
+    y responsabilidad emisor–receptor.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Consolidación sobre cómo diferenciar una falla del sistema
+    de una restricción por límites o bloqueos.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS <br> 
+    Problemas antes de la transferencia<br>
+    Problemas con responsabilidad Emisor–Receptor 
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del<br> Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM2L3 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 2</th>
+  <th style="border:1px solid #1f3a56;">Lección 3</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">PLIN</td>
+  <td style="border:1px solid #1f3a56;">Validación y Seguimiento</td>
+  <td style="border:1px solid #1f3a56;">2</td>
+  <td style="border:1px solid #1f3a56;">20 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Interpretar estados AFT/OCT en Niubiz y reversos en MC30
+    para informar correctamente el destino de los fondos.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Confirmar el estado real de las transacciones
+    usando herramientas de consulta interna.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿Cómo identificar un estado exitoso vs. denegado en Niubiz (AFT/OCT)?<br>
+    🔹¿Qué campos de MC30 confirman la ejecución de un reverso?<br>
+    🔹¿Cuáles son los plazos oficiales de devolución de fondos tras una falla?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Uso de herramientas clave:<br>
+    🔹Niubiz: Estados exitosos o denegados (AFT/OCT).<br>
+    🔹MC30: Verificación de reversos F5 y plazos.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK!
+    para repasar la OVA y fortalecer su conocimiento.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Validación de Operación<br>
+    Validación por MC30
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del<br> Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM2L4 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 2</th>
+  <th style="border:1px solid #1f3a56;">Lección 4</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">PLIN</td>
+  <td style="border:1px solid #1f3a56;">Gestión de retenciones y abonos</td>
+  <td style="border:1px solid #1f3a56;">2</td>
+  <td style="border:1px solid #1f3a56;">20 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Evaluar condiciones de cuenta y abono para aplicar
+    FCR Plin o derivar correctamente reclamos.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Gestionar fondos retenidos y abonos fallidos
+    aplicando protocolos de resolución inmediata.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿En qué casos específicos se aplica el FCR Plin por errores de abono?<br>
+    🔹¿Cuál es la diferencia entre una retención manual y una por falta de fondos?<br>
+    🔹¿Cuál es el protocolo de escalamiento si el cliente no acepta la solución inicial?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Aplicación de FCR en errores de abono.<br>
+    🔹Protocolo de escalamiento y cierre por disconformidad.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para repasar la OVA y fortalecer su conocimiento.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Plin Retenido<br>
+    Error de abono
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del<br> Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM3L1 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 3</th>
+  <th style="border:1px solid #1f3a56;">Lección 1</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Transferencias Interbancarias</td>
+  <td style="border:1px solid #1f3a56;">Gestión y Resolución</td>
+  <td style="border:1px solid #1f3a56;">3</td>
+  <td style="border:1px solid #1f3a56;">30 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Analizar los tipos de transferencia, plazos y motivos de rechazo
+    para garantizar una gestión resolutiva y transparente.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Resolver consultas y problemas sobre transferencias interbancarias
+    para asegurar el flujo correcto de fondos.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder:<br>
+    🔹¿Cuál es la diferencia real de plazos entre transferencias inmediatas y diferidas?<br>
+    🔹¿Cuáles son los motivos de rechazo más comunes en una operación no aplicada?<br>
+    🔹¿Qué protocolo se sigue para asegurar la devolución de fondos al cliente?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Identificación de problemas en intentos de transferencia.<br>
+    🔹Protocolos de devolución de fondos.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para repasar la OVA y fortalecer su conocimiento.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">
+    📘 GUIDE<br>
+    Canales Digitales – Transferencias interbancarias<br>
+    <small>Guía paso a paso de la gestión</small>
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Información de una transferencia
+    Problemas con transferencias
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del<br> Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM3L2 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 3</th>
+  <th style="border:1px solid #1f3a56;">Lección 2</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Transferencias Interbancarias</td>
+  <td style="border:1px solid #1f3a56;">Rechazos e Incidencias</td>
+  <td style="border:1px solid #1f3a56;">3</td>
+  <td style="border:1px solid #1f3a56;">20 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Interpretar motivos de rechazo y plazos de devolución
+    para gestionar quejas de manera efectiva según la normativa.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Gestionar transferencias rechazadas o no aplicadas
+    para informar al cliente sobre el retorno de sus fondos.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder preguntas sobre el tema:<br>
+    🔹¿Cuáles son los motivos de rechazo por datos erróneos, cuenta bloqueada o moneda distinta?<br>
+    🔹¿Cómo se realiza la validación de estados en sistemas de monitoreo y consulta de reversos?<br>
+    🔹¿Qué plazos de devolución (48h–72h) se deben comunicar según el protocolo de cierre?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Seguimientos de fondo.<br>
+    🔹Protocolo de cierre y derivación a reclamos.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para repasar la OVA y fortalecer su conocimiento.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">
+    🧩 LABS<br>
+    Rechazo de transferencia<br>
+    Problemas con intento de transferencia
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del<br> Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+
+const fichaM4L1 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 4</th>
+  <th style="border:1px solid #1f3a56;">Lección 1</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Navegación y Uso</td>
+  <td style="border:1px solid #1f3a56;">Gestión y Operaciones del APP</td>
+  <td style="border:1px solid #1f3a56;">4</td>
+  <td style="border:1px solid #1f3a56;">35 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Explicar y guiar al cliente en el uso de la app, reconociendo sus secciones,
+    herramientas y notificaciones clave para la gestión de la red WiFi.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Guiar al cliente en la gestión de sus datos y ejecución
+    de operaciones principales dentro del app.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder preguntas sobre el tema:<br>
+    🔹¿Cómo se realiza la consulta y actualización de “Datos del APP” para mantener la cuenta segura?<br>
+    🔹¿Cuál es la ruta correcta para ejecutar operaciones frecuentes como pagos y transferencias comunes?<br>
+    🔹¿Cómo se utiliza el “Device Manager” y la “Guía de alertas de dispositivos” ante cambios en el App?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Configuración de Perfil.<br>
+    🔹Seguridad de Dispositivos.<br>
+    🔹Aplicación de la “Pregunta adicional” de soporte y cierre de llamada con encuesta.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para repasar la OVA y fortalecer su conocimiento.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">
+    📘 GUIDE – Canales Digitales – Navegación y uso
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Datos del APP<br>
+    Operaciones Frecuentes
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del <br>Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+
+const fichaM4L2 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 4</th>
+  <th style="border:1px solid #1f3a56;">Lección 2</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Navegación y Uso</td>
+  <td style="border:1px solid #1f3a56;">Herramientas y Beneficios</td>
+  <td style="border:1px solid #1f3a56;">4</td>
+  <td style="border:1px solid #1f3a56;">20 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Asesorar sobre beneficios adicionales como salud financiera para dar valor agregado a la atención.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Promover el uso de herramientas de gestión personal y productos destacados del mes.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder preguntas sobre el tema:<br>
+    🔹¿Cómo funcionan las herramientas "Mis metas" y "Mis presupuestos" para el control de gastos?<br>
+    🔹¿Cuáles son los pasos para la apertura de cuentas a plazo fijo y ahorro desde el App?<br>
+    🔹¿Dónde se ubican los beneficios del "Producto del mes" y cómo se vinculan tarjetas?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Gestión de Salud Financiera.<br>
+    🔹Oportunidades Digitales y campañas vigentes.<br>
+    🔹Autogestión: Reprogramación de deuda.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Feedback sobre salud financiera
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">
+    🧩 LABS<br>
+    Salud Financiera<br>                 
+    Productos del mes
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del <br>Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="3" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+const fichaM5L1 = `
+<div style="font-family:Poppins, sans-serif; font-size:13px;">
+
+<table style="width:100%; border-collapse:collapse; border:2px solid #1f3a56;">
+
+<!-- CONTROL DE ANCHOS -->
+<colgroup>
+  <col style="width:9%;">   
+  <col style="width:13%;">  
+  <col style="width:16%;">  
+  <col style="width:22%;">  
+  <col style="width:26%;">  
+  <col style="width:14%;">  
+</colgroup>
+
+<!-- CABECERA -->
+<tr style="background:#0f2a44; color:#fff; text-align:center;">
+  <th style="border:1px solid #1f3a56;">Cuenta</th>
+  <th style="border:1px solid #1f3a56;">Programa de Estudio</th>
+  <th style="border:1px solid #1f3a56;">Módulo 5</th>
+  <th style="border:1px solid #1f3a56;">Lección 1</th>
+  <th style="border:1px solid #1f3a56;">Día de Capacitación</th>
+  <th style="border:1px solid #1f3a56;">Duración de la Lección</th>
+</tr>
+
+<tr style="background:#4f81bd; color:#fff; text-align:center;">
+  <td style="border:1px solid #1f3a56;">BBVA</td>
+  <td style="border:1px solid #1f3a56;">Canales Digitales</td>
+  <td style="border:1px solid #1f3a56;">Afiliación e Inscripción</td>
+  <td style="border:1px solid #1f3a56;">Afiliación y Soporte de Acceso</td>
+  <td style="border:1px solid #1f3a56;">5</td>
+  <td style="border:1px solid #1f3a56;">35 min</td>
+</tr>
+
+<!-- LOGRO -->
+<tr style="background:#e4ebf5; text-align:center;">
+  <td colspan="6" style="border:1px solid #1f3a56;">
+    <b>🏆 Competencia</b><br>
+    <small><i>Logro de aprendizaje de la lección</i></small>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="6" style="border:1px solid #1f3a56; text-align:center; padding:10px;">
+    Diagnosticar bloqueos y errores de red mediante descartes técnicos por dispositivo para asegurar la continuidad del servicio.
+  </td>
+</tr>
+
+<!-- MOMENTOS -->
+<tr style="background:#dbe5f1; text-align:center;">
+  <th rowspan="2" style="border:1px solid #1f3a56;">🕒 Momento</th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">🚀 Inicio</th>
+  <th style="border:1px solid #1f3a56;">🎯 <strong>KO</strong></th>
+  <th style="border:1px solid #1f3a56;">💡 <strong>NEC</strong></th>
+  <th style="border:1px solid #1f3a56;">🧩 <strong>TA</strong></th>
+  <th rowspan="2" style="border:1px solid #1f3a56;">✅ Cierre</th>
+</tr>
+
+<tr style="background:#eef3fa; text-align:center; font-size:12px;">
+  <td style="border:1px solid #1f3a56;"><strong>KO</strong>necta con el participante</td>
+  <td style="border:1px solid #1f3a56;">satisface las <strong>NEC</strong>esidades de aprendizaje del participante</td>
+  <td style="border:1px solid #1f3a56;"><strong>T</strong>rabajo <strong>A</strong>plicado del participante</td>
+</tr>
+
+<!-- ACTIVIDAD -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">💬 Actividad</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Cuál es el objetivo?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¿Qué aprenderemos en esta lección?</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">¡Esto es lo que hacemos!</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Evaluación</td>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">Refuerza lo aprendido</td>
+</tr>
+
+<!-- ACCIONES -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⚙️ Acciones</td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Resolver fallas de acceso y conectividad en el Asistente Inteligente (AI).
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes ingresarán a DidactiK! para explorar la OVA y responder preguntas sobre el tema:<br>
+    🔹¿Cómo se validan cuentas y tarjetas para el desbloqueo de claves?<br>
+    🔹¿Qué descartes de red y actualización de App/SO son necesarios?<br>
+    🔹¿Cómo gestionar pantallas de carga, QR inválido?
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px;">
+    Los participantes deberán ingresar a DidactiK! para explorar la OVA con los temas:<br>
+    🔹Guía paso a paso de la gestión.<br>
+    🔹Criterios para solución directa o escalamiento a Soporte Digital.
+  </td>
+  <td style="border:1px solid #1f3a56; padding:14px; text-align:center;">
+    Los participantes ingresarán a DidactiK!
+    para resolver la OVA evaluativa.
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    Feedback sobre bloqueos y errores de red.
+  </td>
+</tr>
+
+<!-- RECURSO + OVAs -->
+<tr>
+  <td rowspan="2" style="border:1px solid #1f3a56; font-weight:600; text-align:center;">📚<br>Recurso</td>
+  <td rowspan="2" style="border:1px solid #1f3a56; text-align:center;">🗣️<br>Introducción del formador</td>
+  <td colspan="4" style="border:1px solid #1f3a56; background:#eef3fa; text-align:center; font-weight:600;">
+    OVAs
+  </td>
+</tr>
+
+<tr>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">
+    📘 GUIDE – Canales Digitales – Afiliación e inscripción
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center; padding:14px;">
+    🧩 LABS<br>
+    Problemas de afiliación o acceso<br>
+    Problemas con acceso: Otros mensajes de error<br>
+    Problemas con la conectividad
+  </td>
+  <td style="border:1px solid #1f3a56; text-align:center;">
+    📄<br>Resumen del <br>Formador
+  </td>
+</tr>
+
+<!-- TIEMPO -->
+<tr>
+  <td style="border:1px solid #1f3a56; font-weight:600; text-align:center;">⏳<br>Tiempo estimado</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+  <td colspan="2" style="border:1px solid #1f3a56; text-align:center;">10 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">15 min</td>
+  <td style="border:1px solid #1f3a56; text-align:center;">5 min</td>
+</tr>
+
+</table>
+</div>
+`;
+
+
+</script>
+
+<div id="learningModal" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3
+      id="modalTitle"
+      style="
+        margin:0;
+        font-size:20px;
+        font-weight:600;
+        color:#0f2a44;
+        align-items: center;
+        justify-content: center;   /* 👈 CENTRA EL TÍTULO */
+        position: relative; 
+      "
+    ></h3>
+
+      <button class="modal-close" onclick="closeModal()">✖️</button>
+    </div>
+    <div id="modalContent" class="modal-content"></div>
+  </div>
+</div>
+
+
+</body>
+</html>
